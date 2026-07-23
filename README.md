@@ -278,4 +278,4 @@ stabilisation and documentation.
 
 This project and its documentation are intended for personal use and for
 Astromech community members. Star Wars, R2-D2 and related names are trademarks of
-their respective owners; this is a non-commercial fan project.
+their respective owners.
