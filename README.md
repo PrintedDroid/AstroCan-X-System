@@ -1,7 +1,7 @@
 # AstroCan X -- The All-in-One Control System for Astromech Droids
 
 <!-- webflash-notice -->
-> **Notice:** Future versions of this firmware are released as ready-to-flash web installer in the [Printed Droid Firmware Flasher](https://www.printed-droid.com/firmware-flasher/). The documentation (commands, usage, settings) will continue to be updated here and in the wiki; the source code in this repository remains available in its current state but will no longer be updated.
+> **Notice:** AstroCan X firmware is released as ready-to-flash web installer in the [Printed Droid Firmware Flasher](https://www.printed-droid.com/firmware-flasher/). This repository holds the user handbooks; the documentation (commands, usage, settings) continues to be updated here and in the wiki.
 >
 > **Why:** Printed Droid has shared its source code openly for years. In the meantime, more and more projects in the community build on openly shared work but release their own results as closed source only. Open source works in both directions – this one-way street is not something we will keep supplying.
 
@@ -13,24 +13,31 @@ coherent platform that grows with your droid.
 
 > **Status:** technically mature, in its final polishing phase toward beta --
 > stable enough for a full convention day, extensible enough for your own
-> additions. Handbook build v3.11.114 (2026).
+> additions.
 
 ---
 
 ## What is in this repository
 
 This repository is **documentation only** -- it does not contain firmware or
-source code. It exists to host the user handbook so builders can read it before
-and during a build.
+source code. It hosts the user handbooks so builders can read them before and
+during a build. Firmware comes from the
+[Firmware Flasher](https://www.printed-droid.com/firmware-flasher/).
+
+AstroCan X has two web interfaces side by side -- the **Classic** view and the
+newly structured **Next** view -- and there is a complete handbook for each:
 
 | File | What it is |
 |------|------------|
-| `AstroCan_X_System_Documentation.pdf` | **User handbook (English)** -- operation, concepts, step-by-step how-tos, illustrated |
-| `AstroCan_X_System_Documentation_DE.pdf` | **User handbook (German)** -- same content, in German |
+| `AstroCan_X_System_Documentation ...-classic.pdf` | **Handbook, Classic interface (English)** -- about 820 pages |
+| `AstroCan_X_System_Documentation ...-classic_DE.pdf` | **Handbook, Classic interface (German)** -- about 850 pages |
+| `AstroCan_X_System_Documentation ...-next.pdf` | **Handbook, Next interface (English)** -- about 690 pages |
+| `AstroCan_X_System_Documentation ...-next_DE.pdf` | **Handbook, Next interface (German)** -- about 720 pages |
 | `README.md` | This overview |
 
-The handbook is over **770 pages** per language and is fully illustrated with
-screenshots of the real web interface. A separate Developer Reference (pinouts,
+Both handbooks cover operation, concepts and step-by-step how-tos and are fully
+illustrated with screenshots of the real web interface. Pick the one that
+matches the interface you use. A separate Developer Reference (pinouts,
 protocols, register maps) exists for firmware work and is not part of this
 docs-only release.
 
@@ -43,10 +50,11 @@ sound, lights, logic displays, dozens of servos, panels and sensors -- all
 through one modern, browser-based web interface, its own long-range radio link
 and a modular CAN and wireless board ecosystem.
 
-AstroCan X is exactly that. Behind the project are over a year of development and
-hundreds of hours of work: countless iterations, a feature set that spans from
-"plug-and-play for beginners" to "fully configurable for the pro builder", and
-an extensive, illustrated handbook.
+AstroCan X is exactly that. It grew out of the original AstroCAN modules for
+ShadowMD droids into a fully integrated system with its own remote. Behind it
+are well over a year of development: countless iterations, a feature set that
+spans from "plug-and-play for beginners" to "fully configurable for the pro
+builder", and extensive, illustrated handbooks.
 
 The system is modular and extensible. You start with the Core (radio + master)
 and expand piece by piece -- every add-on board registers itself, shows up in the
@@ -60,7 +68,7 @@ plug in the hardware, pick it in the web UI, done.
 ```
   Remote(s) / RC / Handheld / App
         |
-        |  long-range 2.4 GHz radio (FLRC/FHSS, LoRa, ESP-NOW)  or  WiFi
+        |  long-range 2.4 GHz radio (frequency hopping, fixed, LoRa)  or  WiFi
         v
   AstroCan X Core  =  Gateway (radio + WiFi + web UI)  --on-board UART-->  Master
                                                                     (motor/audio/CAN)
@@ -88,7 +96,9 @@ plug in the hardware, pick it in the web UI, done.
 - Each button can do four actions: short / long / double / chord (two buttons
   together) -- turning a tiny remote into dozens of functions
 - Gyro gestures as extra inputs (tilting/moving triggers actions)
-- OLED display shows live droid status: battery, link quality, mode, now playing
+- OLED display shows live droid status: battery, link quality, mode, now
+  playing -- and why the droid is not driving right now (emergency stop,
+  sensor hold, sticks back to neutral)
 - Up to 4 droid profiles, switchable on the fly
 - Its own long-range radio, battery-powered with deep sleep
 
@@ -109,25 +119,26 @@ plug in the hardware, pick it in the web UI, done.
   port). Freely configurable from 4 to 16 channels per input
 - ExpressLRS (ELRS) fully supported
 - Steam Deck, Windows handhelds and gamepads via a compact USB dongle (with its
-  own OLED + nav stick) that transmits over ELRS -- the real long-range link, not
-  WiFi, so full drive control and range
+  own OLED + nav stick) that transmits over the long-range link, not WiFi -- so
+  full drive control and range
 - Voice control: wake word + commands on the Vision board
 - Phone/tablet via the Touch-Remote, plus app, button board and the web UI
-- Up to two control sources in parallel (driver + feature operator), cleanly
+- Two remotes on one droid at the same time (driver + feature operator), cleanly
   separated in Two-Operator mode
 
 ### Its own long-range radio link
 
-- Custom 2.4 GHz radio on the SX1280 (FLRC) with frequency hopping across 80
-  channels -- robust, interference-resistant, long range
-- LoRa fallback for maximum range at the press of a button
-- Live telemetry back to the remote (battery, link quality, status); multiple
-  radio modes (FHSS / Fixed / LoRa / ESP-NOW) switchable any time
+- Custom 2.4 GHz radio with frequency hopping across 80 channels in fixed time
+  slots -- robust, interference-resistant, long range, even with hundreds of
+  phones and WiFi networks around
+- LoRa mode for maximum range at the press of a button
+- Live telemetry back to the remote (battery, link quality, droid state);
+  radio modes (frequency hopping / fixed / LoRa) switchable any time
 
 ### AstroCan X Core -- the heart on a single board
 
 - Radio gateway and master controller on one PCB
-- Everything on board: OLED display, I2S audio DAC, CAN transceiver, SD slot and
+- Everything on board: OLED display, audio output, CAN connection, SD slot and
   radio receiver
 
 ### CAN-Hub -- the robust backbone
@@ -137,16 +148,19 @@ plug in the hardware, pick it in the web UI, done.
 - Plug-and-play while building and repairing: plug in or swap a board and it
   registers itself on the bus (type, firmware, capabilities); its functions
   appear automatically in the interface -- no recompiling, no protocol setup
+- Cable first, radio as fallback: boards on the bus can also be paired by
+  radio; as long as the cable is healthy it has priority, if it fails radio
+  takes over
 - Live status and auto-rejoin: real-time online/offline per board; wireless
-  modules are paired once (encrypted) and rejoin by themselves afterwards
+  modules are paired once and rejoin by themselves afterwards
 - Separate body and dome strands on one shared bus
 
 ### Drive and dome
 
-- Multiple motor drivers in one firmware (Sabertooth, Cytron, RoboClaw, BLDC-PWM,
-  VESC) -- switch via config, no recompiling
-- Diamond mixing, smooth ramping, three drive modes (Slow/Normal/Turbo),
-  emergency stop and failsafe included
+- Eight motor driver types in one firmware (BLDC-PWM, Sabertooth, Cytron,
+  RoboClaw, VESC (PPM or CAN), ODrive CAN, Roboteq CAN) -- switch via config, no
+  recompiling
+- Diamond mixing, smooth ramping, three drive modes (Slow/Normal/Turbo)
 - AutoDome: full dome rotation with PID control and precise position control over
   CAN
 - Dome Target-Lock (dual-gyro): keeps the head pointed at a fixed point in space
@@ -158,6 +172,9 @@ plug in the hardware, pick it in the web UI, done.
   familiar commands and existing panel sequences keep working
 - The familiar command set runs alongside the modern one, so you migrate at your
   own pace
+- Standalone firmwares for many boards run without a Core and understand the
+  classic serial commands -- e.g. the Teeces logics with the original JawaLite
+  command set
 
 ### Sequence editor and show system
 
@@ -170,6 +187,18 @@ plug in the hardware, pick it in the web UI, done.
 - Music authoring: automatic BPM detection, beat markers, beat-synced waits and
   beat-synced light shows
 - Live cue recording, audio FFT bands, frame/panel editor
+
+### AstroCan X Studio -- the workshop on your PC
+
+- Windows application that connects to the droid over the network
+- Track-based sequence editor (panels, servos, lift, lights, sound, logics) with
+  curves, zoom, undo/redo and an explicitly armed preview
+- Audio workshop: the complete SD sound library, waveform, tempo and beat
+  detection
+- Project files you can back up, share and compare with the droid field by
+  field; encrypted backup of the droid's data
+- Commissioning, fleet check against the firmware catalog and a workshop
+  diagnostic run in which every board reports its bus and radio errors
 
 ### Servos without end
 
@@ -187,35 +216,39 @@ plug in the hardware, pick it in the web UI, done.
   zones (front/side/rear) with configurable thresholds and reactions
 - Live radar in the web UI: sensor angle, field-of-view cones and real-time
   distances, graphically
+- Sensor hold is self-clearing: the feet stop in front of an obstacle and drive
+  again once the path is clear
 - Patrol and wander modes: drive around autonomously, avoid obstacles, follow
   walls, back out of dead ends
+- Vision board: camera with person and gesture detection
 - Person-following: vision + sensors + drive together
 
 ### Multi-droid interaction
 
-- Time-synced shows between two droids
-- Automatic greeting on approach and call-and-response between droids
+- Buddy mode: two droids paired over radio, with mirrored scenes and coordinated
+  reactions
 
 ### Lights and displays -- over 80 animations
 
 - BodyLights with multiple module groups (DPL, CBI, CSL, LDPL, UAL, VU and more),
   80+ animations, scene library, brightness profiles, one shared colour command
   for the whole fleet
-- Logic displays and PSI, classic (Teeces v5) or fully digital (AstroCan DLL)
-- Magic Panel, Periscope, Tactical Display (round display with GIFs and tactical
-  screens)
-- Wireless light/display modules via the BridgeX board over ESP-NOW, with
-  encrypted pairing straight from the web UI
+- Logic displays and PSI, classic (Teeces) or fully digital (AstroCan DLL)
+- Magic Panel, Periscope, Vent Logics, Tactical Display (round display with GIFs
+  and tactical screens) and the round Radar Eye display
+- Wireless light/display modules via the BridgeX board, paired straight from the
+  web UI
 
 ### Audio
 
-- I2S hi-fi audio from SD card, sound categories (chat/happy/scream/music),
+- Hi-fi audio from SD card, sound categories (chat/happy/scream/music),
   multi-track mixer (background loop + effect in parallel), overlays with smooth
-  fade, loudness normalisation
+  fade, loudness normalisation, droid speech
 
 ### Operation -- one web UI for everything
 
-- Modern, mobile-friendly web interface (German and English, dark/light themes)
+- Two web interfaces side by side: the Classic view and the modern Next view
+  (German and English, dark/light themes, mobile-friendly)
 - Dedicated pages for control, sequences, lights, servos, configuration and
   diagnostics
 - Trigger-Pages for your phone: freely configurable button layouts, each tile
@@ -223,23 +256,36 @@ plug in the hardware, pick it in the web UI, done.
 - Touch-Remote, setup wizard for first start, live health dashboard, command
   palette (Cmd+K), notifications
 
-### Backup, export and maintenance
+### Firmware, backup and maintenance
 
-- Complete backup and restore to the SD card: settings survive a firmware reflash
+- Firmware Flasher in the browser: pick the board, plug in over USB, flash --
+  every published version stays selectable, settings are kept unless you choose
+  to erase
+- OTA updates for the Core from the web UI; boards move step by step to a
+  two-slot layout (new firmware is verified before it is activated, the old one
+  stays as fallback) -- the basis for updates over the bus
+- Complete backup and restore: settings survive a firmware reflash
 - Export and import sequences, shows and profiles
-- OTA updates over WiFi -- flash new firmware from the web UI, no cable
 
 ### Deep diagnostics
 
 - Live health dashboard, crash reports, per-board CAN heartbeat, board logs and
   telemetry logging to SD
+- Every board on the bus reports its own error counters, boot and driver state
+  on request -- for a diagnostic run without plugging USB into each board
 
 ### Safety first
 
-- Global emergency stop, radio-loss failsafe (hold/centre/stop), multi-layer
-  runaway protection
-- Under-voltage cutoff, watchdog, valet/transport lockout (motors hard-disabled),
-  child lock
+- Emergency stop that latches and, from the factory, stops everything that moves
+  (feet, dome, lift; servos hold, shows abort) -- nothing moves back on its own.
+  Which areas it stops is configurable (feet always). The latch survives a
+  restart; release deliberately in the web interface or on the remote by holding
+  the E-Stop button for 3 seconds with the sticks at neutral
+- Radio-loss failsafe (hold, ramp, stop), multi-layer runaway protection
+- Under-voltage cutoff, watchdogs, drive heartbeat, valet/transport lockout
+  (motors hard-disabled), child lock
+- Foot motors can only be driven from the remote -- never from phone, web UI,
+  app or automation
 - Two-Operator mode and Instructor mode (teacher override for beginners)
 
 ### Smart home and automation
@@ -255,23 +301,28 @@ plug in the hardware, pick it in the web UI, done.
 
 ### Grows with you -- the board ecosystem
 
-More than a dozen documented add-on boards on the CAN bus or wireless:
-ServoBoard, AutoDome, Sense, Vision, Domelift, CSL+, D-DPL / RGB-DPL BodyLights,
-AstroCan DLL, Teeces v5, Magic Panel, Periscope, Tactical Display, Dome Button
-Controller, Buttonboard, BridgeX and more.
+More than 30 boards and form factors on the CAN bus or wireless, each with its
+own firmware in the Firmware Flasher -- plus around 20 standalone firmwares for
+droids without a Core:
+ServoBoard, AutoDome, Sense, Vision, DomeLift, CSL+, CSL, UAL, D-DPL / RGB-DPL
+BodyLights, AstroCan DLL, Teeces (C3 and S3), Magic Panel and Magic Panel HD,
+Periscope, Vent Logics, Tactical Display, Radar Eye, Dome Button Controller,
+Buttonboard, Config Display, BridgeX, Feature X, Mini-Remote, Lightsaber-Remote
+and more.
 
 ---
 
 ## Documentation
 
-- **User handbook (this repo):** over 770 pages per language, English and German,
+- **User handbooks (this repo):** one for the Classic interface and one for the
+  Next interface, each in English and German, roughly 700 to 850 pages each,
   illustrated with real web-interface screenshots, with step-by-step guides.
 - A separate **Developer Reference** covers pinouts, protocols, byte layouts, NVS
   keys and register maps (not part of this docs-only release).
 
-Start with the System Documentation PDF in your language. It walks you from the
-first boot and setup wizard through everyday operation to the advanced sequence,
-lighting and automation features.
+Start with the handbook for your interface in your language. It walks you from
+the first boot and setup wizard through everyday operation to the advanced
+sequence, lighting and automation features.
 
 ---
 
