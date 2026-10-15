@@ -1,0 +1,9 @@
+BUILD SETTINGS - 5_Modular_Ends_Grips (2026-10-15)
+Script: Lightsaber_Remote/build_saber_ends.py (snapshot here) with SIZE = 'MINI'; it uses helpers from build_lightsaber.py (snapshot here).
+Run in Blender: g = {'SIZE': 'MINI'}; exec(open(r'<build_saber_ends.py>').read(), g)
+MINI dimensions (from build_saber_miniremote.py): R 21 (d42), TH_MAJ 17.5, depth 1.2, clearance 0.3, pitch 2.5 -> bore RI_TH 17.8.
+Emitter (local z, 0 = LockRing face): free stub 27.6 mm, sleeve 0..12, head 12.15..63.6 (thread 13.0..27.2, 45 deg roof above).
+Grip: GripBody print coords p = 0 at the shell end: internal thread 0.4..27.2, 45 deg to cavity r 14.5, shoulder p 76.25, male stud to p 90.3
+  (thread like the shells). Pommel heads 0..16.35, thread 2.7..15.85. Total GripBody + head = 92.9 mm (same as GripTube).
+Grip patterns: GRENADE 12 columns staggered, pads 6x6 h 1.2 / RIBS 16 x w 4 h 1.0 / PANELS 8 x w 10, 20 long, h 1.0 - all 45 deg flanks.
+Sleeve bore chamfer offset 0.07 mm for MINI (boolean issue otherwise).

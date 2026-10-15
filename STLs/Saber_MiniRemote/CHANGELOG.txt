@@ -1,0 +1,24 @@
+AstroCan X Saber Mini Remote - changelog (dimensions and changes)
+===================================================================
+2026-10-15
+  - New: grip pattern on the bottom shell, GRIP_STYLE GRENADE / RIBS / PANELS (with and without screws, R and L)
+    -> BottomShell_*_<Style> in all version folders + Preview_Grips.png. Matches the GripBody styles.
+  - New: STL/5_Modular_Ends_Grips - emitter heads (Classic/Shroud/Crown/Stepped) + sleeves (Classic/Ribs/Flutes),
+    GripBody (Classic/Grenade/Ribs/Panels) + PommelHead (Classic/Grenade/Facet/Spool) replacing the one-piece GripTube.
+    Built with Lightsaber_Remote/build_saber_ends.py SIZE='MINI'. All manifold, support-free.
+  - Fix GripTube_OpenDown: domed pommel top (1.2 mm dome) printed badly in the last 3 layers -> flat top with 45 deg chamfer,
+    flute ends as 45 deg cone. Re-exported to STL/0_Options.
+  - All shells: on/off slide slot closed 1 mm more from the top shell (SLIDE_CLOSE 1.0 -> 2.0) and 0.5 mm from the bottom shell
+    (SLIDE_CLOSE_BOT 0.5) -> slot height 3.5 mm. Label 'AstroCan X' moved so the X sits at joystick height; left version now also reads pommel -> emitter.
+  - New option per version folder: TopShell_*_NoScrews + BottomShell_*_NoScrews (SHELL_SCREWS = False), screw blocks kept as guide tabs.
+  - New option STL/0_Options/SaberMiniRemote_GripTube_PommelDown.stl: prints standing on a flat pommel without supports
+    (upper groove flanks, pommel groove, ring underside 45 deg, flute ends as 45 deg cone). Script: grip_tube(pommel_down=True).
+2026-10-14
+  - Mini Remote built into a Ø42 hilt (axis x 19 / z -15.2, box profile lofts into the tube over TRANS = 10 mm each side).
+  - Variants: VARIANTE RECHTS/LINKS, JOY_STYLE INSEL/AUSSCHNITT (files *_cutout).
+  - Joystick points to the EMITTER (front), screw-off GripTube with pommel at the back (USB charging), GRIP_LEN 100.
+  - Threads right-hand (were left-hand in the first draft!), pitch 2.5, TH_MAJ 17.5, clearance 0.3, full length on both stubs.
+  - LockRing (LOCK_L 8 mm, print 2x) in front of both ends keeps the shells closed while unscrewing.
+  - EmitterRing (short, 43.9 mm) and EmitterRing_Long (EM_LONG +20 -> 63.9 mm), inner 45 deg cone.
+  - GripTube_OpenDown: all overhangs 45 deg for printing thread opening down.
+  - 4x M2 countersunk side screws (approx. 6-8 mm, estimated).

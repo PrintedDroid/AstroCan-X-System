@@ -1,0 +1,5 @@
+BUILD SETTINGS
+Script: build_klemme_legion_go_s.py (snapshot)
+Clamp (2026-10-14): g = {'STYLE': 'KLEMME', 'K_LIP_KLEMME': 5.0, 'KD_CL_H': -0.25, 'KD_CL_D': -0.4}
+  width 20, device lips LIP_TOP 4.5, device preload KL_CL_H 0.55 / KL_CL_D -0.5. Export: rotated 180 deg about Y (back plate down).
+Pocket / Screw: g = {'STYLE': 'TASCHE'} / {'STYLE': 'SCHRAUBE'} (exported 2026-10-13, unchanged).

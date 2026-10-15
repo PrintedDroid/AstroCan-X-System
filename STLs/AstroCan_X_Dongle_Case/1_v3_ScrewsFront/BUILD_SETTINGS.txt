@@ -1,0 +1,5 @@
+BUILD SETTINGS
+Date: 2026-10-14   Script: build_dongle.py (snapshot: build_dongle_snapshot.py)
+Run: g = {'SCREWS_FRONT': True, 'ANT_SMA': False}; exec(open(r'<script>').read(), g)
+PCB 38.5 x 52.905 x 1.6, screw holes (2.0/50.905), (36.5/50.405), (2.0/2.0); ZLID 5.2, ZTOP 6.8, ZFLOOR -18, ZBOT -19.6.
+Export: lid rotated 180 deg about X (top down), bottom floor down, stick cap rotated (head down), all centred.

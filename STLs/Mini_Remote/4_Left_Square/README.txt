@@ -1,0 +1,18 @@
+Mini Remote - left hand, square
+===============================
+www.printed-droid.com
+
+AstroCan X Mini Remote case, left-hand version, square lid edges.
+Standard = normal bottom, Flat = flat back (lid walls go down, bottom plate sits inside).
+
+FILES
+-----
+
+SUBFOLDERS
+----------
+  Flat
+  Standard
+
+NOTES
+-----
+  - Choose Standard or Flat, then BottomShell with or without rear joystick hole.

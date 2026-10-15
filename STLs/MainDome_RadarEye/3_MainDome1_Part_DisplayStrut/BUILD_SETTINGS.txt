@@ -1,0 +1,12 @@
+BUILD SETTINGS - Alt_DisplayStrut (2026-10-14)
+==============================================
+Modelled in RadarEye.blend (objects *_Strut, RadarEye_DisplayStrut). Frame: lens axis a = (-0.013, 0.8742, -0.4854) (to the back = +t),
+u = e1 (back view: + = left), v = e2 (back view: + = down), origin = centre of cut_front_1.
+  T0 (strut underside)        = 26.4   (display seat 21.175 -> 5.2 mm; dome surface at eye centre t = 28.72 -> strut top 28.4, 0.3 clearance)
+  Strut (flat)                 u -42.2 .. 52.2, v -5.0 .. 5.0, t T0 .. T0+2.0  (T-beam dropped: no room to the dome)
+  Screw hole                   u 47, v 0: d2.4 + countersink d4.4 x 1.2 in the strut, pilot d1.7 x 8 mm in the ScreenMod
+  Slot right wall              u -43.0 .. -37.5, v +-5.3, t T0-0.1 .. T0+2.3
+  Notch left                   u 40.5 .. 52.5, v +-5.3, t T0 .. back surface
+  Flex notch shortened         outer edge (40.77/-20.16)-(43.49/13.73) moved 1.0 mm inwards (filled up to the back surface fit)
+Export: ScreenMods in original coordinates; strut in (u, v, t-T0) = flange on the bed.
+Measured: right outer edge back surface t = 34.1 (13.0 mm behind the seat); dome surface behind the eye: t 28.72 (centre), 29.6 (u +-20), 31.4 (u +-35).

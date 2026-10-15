@@ -1,0 +1,2 @@
+BUILD SETTINGS
+Script: build_dongle_v2_backup_screws_back.py (snapshot), exported 2026-10-12/13. Run: g = {'ANT_SMA': True}

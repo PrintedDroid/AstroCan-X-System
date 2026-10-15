@@ -1,0 +1,23 @@
+BUILD SETTINGS - how the STL files in this folder were made
+==========================================================
+
+Date of export : 2026-10-14 (GripTube_PommelDown added 2026-10-15)
+Build script   : build_saber_miniremote.py  (copy of the exact version: build_saber_miniremote_snapshot.py)
+Run in Blender : g = {'VARIANTE': 'RECHTS', 'JOY_STYLE': 'INSEL', 'GRIP_LEN': 100.0, 'EM_LONG': 20.0, 'LOCK_L': 8.0, 'TRANS': 10.0}; exec(open(r'<script>').read(), g)
+
+Settings (globals passed to the script):
+  VARIANTE       = 'RECHTS'
+  JOY_STYLE      = 'INSEL'
+  GRIP_LEN       = 100.0
+  EM_LONG        = 20.0
+  LOCK_L         = 8.0
+  TRANS          = 10.0
+
+Export: shells in model orientation (split face down); emitter, grip tube, lock ring rotated upright.
+
+GripTube_PommelDown: grip_tube(pommel_down=True). Flat base at GB-1.2 with 45 deg chamfer (r 21.9 -> 23.5),
+  grooves (pitch 5, width 2, depth 1): lower flank 0.4 high, upper flank 45 deg; pommel groove and ring underside 45 deg;
+  8 flutes end in a 45 deg cone; bottom ring engraving r 10.2..11, 0.6 deep. Exported pommel down, z up, length 92.9 mm.
+
+GripTube_OpenDown (re-exported 2026-10-15): pommel top now flat (same as PommelDown: flat at GB-1.2, 45 deg chamfer r 21.9 -> 23.5,
+  ring engraving 0.6 deep), flute ends towards the pommel as 45 deg cone. Exported thread opening down, length 92.9 mm.

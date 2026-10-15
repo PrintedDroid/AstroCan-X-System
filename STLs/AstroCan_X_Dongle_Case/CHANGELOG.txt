@@ -1,0 +1,12 @@
+AstroCan X Dongle - changelog (dimensions and changes)
+=======================================================
+2026-10-14
+  - v3: screws from the FRONT, 3x M2 x 12 countersunk (lid through hole d2.4 + countersink d4.4 x 1.2,
+    bottom pilot hole d1.7 x 7 mm, floor closed). Script parameter SCREWS_FRONT (False = v2).
+  - Legion Go S clamp: dongle lips 3 -> 5 mm (K_LIP_KLEMME), dongle preload length 0.2 -> 0.5 mm (KD_CL_H -0.25),
+    depth 0 -> 0.4 mm (KD_CL_D -0.4). Old clamp in STL/5_Holder_LegionGoS/Old_Clamp_v1.
+  - STL folders sorted into STL/<n>_..., READMEs, previews, build settings + script snapshots.
+2026-10-13
+  - Legion Go S holders (Screw / Pocket / Clamp), clamp with device lips 4.5 mm and 0.5 mm preload.
+2026-10-12
+  - v2: 2 mm walls, rounded edges, SMA option.

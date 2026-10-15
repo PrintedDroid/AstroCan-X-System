@@ -1,0 +1,10 @@
+BUILD SETTINGS
+==============
+
+These parts were modelled interactively in MainDome_RadarEye.blend (no build script).
+Card holder: KW10 switch slots t 67..72 mm, 2.4 mm wide (M2), 9.5 mm hole spacing; switch area flush with channel floor (n = -1.2).
+Card channel gap 2.5 mm for 1.6 mm card, card stop at 60 mm insertion depth.
+Dome cutouts: 3 bores d3.2, card slot, cable window 20 x 15 mm. ScreenMod placement: custom property 'placement_matrix' on object ScreenMod.
+Full dome: part -> full transform rot_z 225.02 deg, t (7.856, 20.201, 42.773).
+Card holder export: flat side down, rotated about z by 43 deg for the smallest footprint.
+ScreenMod lip (2026-10-14): opening d70.2 over 1 mm (Ledge1mm) / 2 mm (Ledge2mm) depth in front of the display seat (seat at t = 21.175 on the lens axis), front opening d76.2.

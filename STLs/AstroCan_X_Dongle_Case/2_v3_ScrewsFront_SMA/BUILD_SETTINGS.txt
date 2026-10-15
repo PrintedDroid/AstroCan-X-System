@@ -1,0 +1,4 @@
+BUILD SETTINGS
+Date: 2026-10-14   Script: build_dongle.py (snapshot)
+Run: g = {'SCREWS_FRONT': True, 'ANT_SMA': True}; exec(open(r'<script>').read(), g)
+SMA hole d6.5 at x 26.1, z -13.0. Export like 1_v3_ScrewsFront.
