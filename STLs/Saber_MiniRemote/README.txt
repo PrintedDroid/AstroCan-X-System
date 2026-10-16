@@ -15,7 +15,7 @@ Pick ONE version folder - it contains everything you need to print, already in p
   STL/2_Right_Cutout   right-hand Mini Remote, flat lid with joystick cutout
   STL/3_Left_Island    left-hand Mini Remote, raised joystick island
   STL/4_Left_Cutout    left-hand Mini Remote, flat lid with joystick cutout
-  STL/5_Modular_Ends_Grips  mix-and-match emitter heads/sleeves, grip bodies (4 grip styles) and pommel heads
+  STL/5_Modular_Ends_Grips  mix-and-match emitter heads (short/long), grip bodies (4 grip styles), closed pommel heads - also fit Lightsaber Remote Standard
   STL/0_Options        alternatives: short emitter, support-free grip tubes (PommelDown, OpenDown)
 
   R / L = Mini Remote version (lower PCB mirrored for the left version: side buttons,
