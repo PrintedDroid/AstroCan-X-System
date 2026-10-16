@@ -1,0 +1,7 @@
+BUILD SETTINGS - 8_Ends_Slim (2026-10-15)
+Script: build_saber_ends.py (snapshot: build_saber_ends_snapshot.py). It reads all dimensions from build_lightsaber.py (snapshot included).
+Run in Blender: g = {'SIZE': 'SLIM'}; exec(open(r'<build_saber_ends.py>').read(), g)
+Split emitter: sleeve E0 = Z_TH_TOP[0] + 0.3 .. ZS = E0 + 12.0, head ZS + 0.15 .. ET = Z_TH_TOP[1] + 22.0 (thread from ZM_TOP, below the split)
+Split pommel:  head 0 .. ZP - 0.15 with ZP = ZM_BOT + 0.25 (carries the thread), sleeve ZP + 0.15 .. Z_TH_BOT[1]
+Bore RI_TH = TH_MAJ + 0.3, internal thread like the one-piece rings (pitch 2.5, ridge 1.7/0.3). Min. wall 0.9 mm (grooves), heads >= 1.3 mm.
+Export: model orientation = print orientation, centred, lowest point on the bed.

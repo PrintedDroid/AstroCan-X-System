@@ -1,0 +1,5 @@
+BUILD SETTINGS - 9_Test
+=======================
+
+Thread test pieces from the first thread test (2026-10-13), made interactively from build_lightsaber.py geometry (no own build script).
+Thread: right-hand, pitch 2.5 mm, depth 1.2 mm, clearance 0.3 mm - same as all current parts (test was successful).

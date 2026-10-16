@@ -1,0 +1,32 @@
+AstroCan X Lightsaber Remote - changelog (dimensions and changes)
+==================================================================
+2026-10-16
+  - FIX vertical versions (2_, 4_, 6_): the EmitterTube had only 0.2 mm wall over its internal thread (joint thread was as big as the
+    end threads) -> the lower ~14 mm printed as a loose thread only (slicer: empty/open layers). New joint thread TH_J_MAJ = R - 3.5
+    (Standard 17.5 / Slim 15.5), tube wall 3.2 mm, shell stud wall 2 mm (core R_CORE_J). Re-exported shells (also _Grenade/_Ribs/_Panels)
+    and EmitterTube of 2_, 4_, 6_. Old EmitterTubes do NOT fit the new shells and vice versa - print both new.
+  - build_lightsaber.py now forces its collection visible (hidden collection -> booleans silently fail).
+  - All 314 STLs of all projects checked with a layer slicer (empty layers, walls < 0.4 mm, missing cross-section): no other defects.
+2026-10-15
+  - New: grip alternatives GRIP_STYLE GRENADE / RIBS / PANELS (raised 45 deg frustums on back + sides of the control section),
+    exported as *_FrontShell_<Style> / *_BackShell_<Style> into all version folders 1_..6_ (+ Preview_Grips.png).
+    New parameter GRIP_PHI_OFF (pattern rotation; 6_Slim vertical Ribs uses 2.0).
+  - build_saber_ends.py: SIZE 'MINI' for the Saber Mini Remote (see Saber_MiniRemote/STL/5_Modular_Ends_Grips).
+  - New: modular ends (build_saber_ends.py) -> STL/7_Ends_Standard, 8_Ends_Slim. Emitter/pommel ring split after the grooves into
+    sleeve (loose ring on the smooth stud collar) + screw-on head. Heads: Classic, Shroud, Crown, Stepped / Classic, Grenade, Facet, Spool;
+    sleeves Classic, Ribs, Flutes. All support-free, all manifold. Styles inspired by 'Build Your Own Lightsaber' parts collection (own geometry).
+  - New: STL/6_Slim_PrintVertical - Slim (d38) printable standing and split like the standard vertical version
+    (shells 198 mm, EmitterTube 55 mm, new ends). Script: NEW_ENDS now also for SLIM; on SLIM the flutes stay on the shells.
+2026-10-14
+  - New option KASTEN_DROP = 3.0: control box and front modules 3 mm lower (plate y 20.5 instead of 23.5);
+    tube cut flat in the plate area. Max. approx. 3.8 mm (2x3 board would hit the battery).
+  - New option PRINT_VERT: shells printable standing (pommel down): grip groove top flank 45 deg, rails / flutes / steps 45 deg,
+    45 deg ribs under all posts, screw and dowel domes, switch pocket, battery rails, PAIR tube. Control box underside: support (no ramp, by request).
+  - New option SEGMENTED: shells end at z 186 with shoulder + 14 mm full thread stub -> shell height 198 mm;
+    screw-on EmitterTube (z 186.2 .. 267.7). Upper dowels moved to z 178.
+  - New ends (NEW_ENDS, vertical versions): EmitterRing E0 = 236.6 .. 289.7, flare R+4.5, 6 windows, 6 lip notches,
+    recessed blade port, inner 45 deg cone (8 mm top bridge); PommelRing with 8 flutes, groove, ring, USB hole d16, ring engraving.
+  - Total length vertical versions approx. 290 mm.
+  - Threads: right-hand, pitch 2.5, depth 1.2, clearance 0.3, TH_MAJ 20.5 (unchanged).
+2026-10-13
+  - Slim BackShell re-exported flat (feature stood 0.18 mm above the split face).
